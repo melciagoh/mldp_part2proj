@@ -126,19 +126,19 @@ st.markdown("Predict the estimated selling price of a used car based on its feat
 st.sidebar.header("Enter Car Details")
 
 # Free-text inputs for categorical features with many options
-make = st.sidebar.text_input("Make (e.g., BMW, Kia)")
-body = st.sidebar.text_input("Body Type (e.g., SUV, Sedan)")
-state = st.sidebar.text_input("State (e.g., CA, TX)")
-color = st.sidebar.text_input("Exterior Color (e.g., white, black)")
-interior = st.sidebar.text_input("Interior Color (e.g., black, beige)")
+make = st.sidebar.text_input("Make (e.g., BMW, Kia)", key="make_input")
+body = st.sidebar.text_input("Body Type (e.g., SUV, Sedan)", key="body_input")
+state = st.sidebar.text_input("State (e.g., CA, TX)", key="state_input")
+color = st.sidebar.text_input("Exterior Color (e.g., white, black)", key="color_input")
+interior = st.sidebar.text_input("Interior Color (e.g., black, beige)", key="interior_input")
 
 # Dropdown for limited-option categorical features
-transmission = st.sidebar.selectbox("Transmission", ["automatic", "manual"])
+transmission = st.sidebar.selectbox("Transmission", ["automatic", "manual"], key="transmission_input")
 
 # Sliders / numeric inputs
-year = st.sidebar.slider("Year of Manufacture", 1990, 2026, 2015)
-odometer = st.sidebar.number_input("Odometer (km)", min_value=0, max_value=1000000, value=50000, step=1000)
-condition = st.sidebar.slider("Condition (1-5)", 1.0, 5.0, 4.0, step=0.1)
+year = st.sidebar.slider("Year of Manufacture", 1990, 2026, 2015, key="year_input")
+odometer = st.sidebar.number_input("Odometer (km)", min_value=0, max_value=1000000, value=50000, step=1000, key="odometer_input")
+condition = st.sidebar.slider("Condition (1-5)", 1.0, 5.0, 4.0, step=0.1, key="condition_input")
 
 # -----------------------------
 # Predict button
@@ -210,3 +210,4 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
